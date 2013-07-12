@@ -1,25 +1,25 @@
-title:            Minimal Mistakes
-tagline:          Jekyll Theme
+title:            Repeatable Systems
+tagline:          Breaking things at industrial scale
 description:      A responsive Jekyll theme large featured images and solid typography.
 #Comment out url when working locally to resolve base urls correctly
-url:              http://mmistakes.github.io/minimal-mistakes
+#url:              http://mmistakes.github.io/minimal-mistakes
 
 # Owner/author information
 owner:
-  name:           Michael Rose
+  name:           Karl Matthias
   avatar:         bio-photo.jpg
-  bio:            "Just another boring, time traveling, tattooed, designer from Buffalo New York."
-  email:          michael@mademistakes.com
+  bio:            "From Portland, Oregon, currently living in Guildford, UK. DevOps, sysadmin, coder."
+  email:          relistan+blog@gmail.com
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
-  twitter:        "mmistakes"
-  facebook:       
-  github:         "mmistakes"
-  linkedin:       
-  instagram:      "mmistakes"
-  lastfm:         
-  tumblr:         
+  twitter:        "relistan"
+  facebook:
+  github:         "relistan"
+  linkedin:
+  instagram:
+  lastfm:
+  tumblr:
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    "http://plus.google.com/118238196859537351707"
+  google_plus:
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   UA-2011187-3
@@ -36,7 +36,7 @@ links:
     url: /articles
   - title: Theme Setup
     url: /theme-setup
-  - title: Made Mistakes
+  - title: Repeatable Systems
     url: http://mademistakes.com
     external: true
 
@@ -47,7 +47,7 @@ pygments:    true
 markdown:    kramdown
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title
+permalink:   /:title
 
 kramdown:
   auto_ids: true
