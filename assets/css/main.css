@@ -556,7 +556,6 @@ p {
 }
 p + p {
   text-indent: 1.5em;
-  margin-top: -1.5em;
 }
 abbr,
 acronym,
