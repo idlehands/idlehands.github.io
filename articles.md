@@ -1,9 +1,8 @@
 ---
 layout: post-index
 permalink: /articles/index.html
-title: Articles
-tagline: A List of Posts
+tagline: Articles
 tags: [blog, graphic design]
 image:
-  feature: texture-feature-03.jpg
+  feature: RepeatableSystems-large2.jpg
 ---
