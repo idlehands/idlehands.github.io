@@ -20,7 +20,7 @@ owner:
   lastfm:
   tumblr:
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:
+  google_plus:    https://plus.google.com/109700665359485724940/
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   UA-2011187-3
@@ -35,11 +35,6 @@ links:
     url: /about
   - title: Articles
     url: /articles
-  - title: Theme Setup
-    url: /theme-setup
-  - title: Repeatable Systems
-    url: http://mademistakes.com
-    external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
