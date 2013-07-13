@@ -20,9 +20,9 @@ the FFI wrappers, I wrote a nice set of tooling to make it easy to
 run them as sub-processes from our pipeline workers.  It had a not
 very original name at first, but Gavin Heavyside suggested Magritte
 because of his painting [The Treachery of Images](http://en.wikipedia.org/wiki/The_Treachery_of_Images),
-with the famous quote *Ceci n'est pas une pipe*. "This is not a pipe"
+with the famous tag line *Ceci n'est pas une pipe*. "This is not a pipe"
 
-<img src="https://raw.github.com/relistan/magritte/master/assets/ceci-nest-pas-une-pipe.jpg" alt="" />
+![](https://raw.github.com/relistan/magritte/master/assets/ceci-nest-pas-une-pipe.jpg)
 
 So I released the [Magritte gem on rubygems.org](http://rubygems.org/magritte).
 
