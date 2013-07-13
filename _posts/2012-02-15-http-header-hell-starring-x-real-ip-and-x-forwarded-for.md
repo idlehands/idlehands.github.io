@@ -12,7 +12,7 @@ meta:
   _wp_old_slug: ''
 ---
 **TL;DR:** Having both headers set to different values upsets
-`rack-protection`.
+`rack-protection`. 
 
 It's always fun to spend a whole day debugging something that should
 be simple.  Actually I think it's always the things that should be
