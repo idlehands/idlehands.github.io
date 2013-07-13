@@ -9,7 +9,7 @@ feed_url:         http://feeds.feedburner.com/RepeatableSystems
 owner:
   name:           Karl Matthias
   avatar:         bio-photo.jpg
-  bio:            "From Portland, Oregon, currently living in Guildford, UK. DevOps, sysadmin, coder."
+  bio:            "DevOps, sysadmin, coder. From Portland, Oregon, currently living in Guildford, UK."
   email:          relistan+blog@gmail.com
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   twitter:        "relistan"
