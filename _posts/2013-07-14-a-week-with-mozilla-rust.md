@@ -19,7 +19,7 @@ My summary on the state of things is that they are too much in flux for anything
 
 That's how I see the state of all things Ruat. But, I'd like to show some of the niceties of Rust so let's take a look at some of my code. **Full disclaimer:** I don't claim that any of this code is either correct or idiomatic Rust. It is solely my best effort. Feedback is of course welcome.
 
-###Some Code
+##Some Code
 *You can take a look at the whole project [on GitHub](https://github.com/relistan/cryptorust)*
 
 My experiment was to wrap some of the hashing functions from OpenSSL and to implement HMAC in Rust natively. This seemed to be a low enough level exercise to test Rust's chops as a systems programming language while also getting a sense of how it feels to write native Rust code. I found that I really like the language and that generally when I wanted to reach for something it was there. When it wasn't, I had only to make a few adjustments to my thinking and there was a nice set of tools waiting at hand.
