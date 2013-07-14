@@ -34,6 +34,14 @@ class S3Client
     end
   end
 
+  def delete(file_list)
+    file_list.each do |file|
+      print "removing #{file}..."
+      @bucket.objects[file].delete
+      puts 'done'
+    end
+  end
+
   def s3_filelist
     @s3.buckets[S3_TARGET_BUCKET].objects.map { |x| x.key }
   end
@@ -50,6 +58,7 @@ task :upload do
 
   unless difference.empty?
     puts "Files on remote that were not uploaded: #{difference.join(', ')}"
+    client.delete(difference)
   end
 end
 
