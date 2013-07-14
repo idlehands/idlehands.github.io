@@ -2,7 +2,7 @@ title:            Repeatable Systems
 tagline:          Breaking things at industrial scale
 description:      A responsive Jekyll theme large featured images and solid typography.
 #Comment out url when working locally to resolve base urls correctly
-#url:              http://mmistakes.github.io/minimal-mistakes
+url:              http://relistan.com
 feed_url:         http://feeds.feedburner.com/RepeatableSystems
 
 # Owner/author information
@@ -23,10 +23,10 @@ owner:
   google_plus:    https://plus.google.com/109700665359485724940/
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   UA-2011187-3
-google_verify:      UQj93ERU9zgECodaaXgVpkjrFn9UrDMEzVamacSoQ8Y
+google_analytics:   UA-30513561-1
+google_verify: 
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:        D81F4C18A6CB3018F64D7C827D953DFD
+bing_verify:
 
 # Links to include in top navigation
 # For external links add external: true
