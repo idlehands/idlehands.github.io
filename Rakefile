@@ -56,4 +56,5 @@ end
 desc 'build the site into the _site dir'
 task :build do
   system "lessc assets/less/main.less > assets/css/main.css"
+  system "jekyll build"
 end
