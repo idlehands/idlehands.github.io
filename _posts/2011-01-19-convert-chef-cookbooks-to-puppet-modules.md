@@ -48,13 +48,13 @@ Usage: convert.rb [options]
 {% endhighlight %}
 
 Here is what the converter handles:
- * Converts cookbooks to a Puppet module directory structureg
- * Converts recipes to mostly-right Puppet manifests in the proper locationg
- * Copies templates to the correct location in the Puppet moduleg
- * Downloads remote_file resources into the Puppet module's files directoryg
- * Tries to replace Chef's node[:some][:var] variables with $some_var formatg
- * Edits templates to replace variable substitutions with the same formatg
- * Makes an attempt to replace not_if and only_if blocks with Puppet equivalentsg
+* Converts cookbooks to a Puppet module directory structureg
+* Converts recipes to mostly-right Puppet manifests in the proper locationg
+* Copies templates to the correct location in the Puppet moduleg
+* Downloads remote_file resources into the Puppet module's files directoryg
+* Tries to replace Chef's node[:some][:var] variables with $some_var formatg
+* Edits templates to replace variable substitutions with the same formatg
+* Makes an attempt to replace not_if and only_if blocks with Puppet equivalentsg
 
 I am still working with the tool and it will probably evolve over time.  But it has a pretty good success rate now.  Here's some sample output:
 
