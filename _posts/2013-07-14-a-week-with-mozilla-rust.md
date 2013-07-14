@@ -7,7 +7,7 @@ type: post
 category: articles
 published: true
 ---
-I want another systems language in my tool belt. I want a language where can be much more productive than in C: one in which I do not fear the correctness of my memory management, and don't have to go through major gyrations to write concurrent code. But as I want a systems language, something that can effectively replace C that means anything with enforced garbage collection like Go is out. Go is also not particularly friendly to interface to external libraries written in C. C++ has all of the pitfalls of C memory management and does not improve the concurrency situation at all.  There are a few contenders still standing at that point, but I'll look at one of them here.
+I want another systems language in my tool belt. I want a language where I can be much more productive than in C: one in which I do not fear the correctness of my memory management, and don't have to go through major gyrations to write concurrent code. But since I want a systems language that can effectively replace C, anything with enforced garbage collection like Go is out. Go is also not particularly friendly to interface to external libraries written in C. C++ has all of the pitfalls of C memory management and does not improve the concurrency situation at all.  There are a few contenders still standing at that point, but I'll look at one of them here.
 
 Mozilla's [Rust](http://rust-lang.org/) might be the solution. Rust's big wins are a modern object system, closures, a concurrency system designed for multi-core systems, and a memory model where the compiler can tell you if you're doing something wrong or unsafe at compile time. Rust is also ABI compatible with C which makes tying libraries written in Rust into external code a minimal effort. Even less effort is required when tying C libs to Rust.  If you want garbage collection, you can have it and you are fully in control of which memory is managed in this way.  Wins all around.
 
@@ -17,7 +17,7 @@ As the community around any language is as important as the language, I wondered
 
 My summary on the state of things is that they are too much in flux for anything like production code at the moment. But I don't think it will be that long before that situation is reversed.  I expect major work will be happening in Rust by this time next year as the language settles down and major libraries can start to be written.
 
-That's how I see the state of all things Ruat. But, I'd like to show some of the niceties of Rust so let's take a look at some of my code. **Full disclaimer:** I don't claim that any of this code is either correct or idiomatic Rust. It is solely my best effort. Feedback is of course welcome.
+That's how I see the state of all things Rust. But, I'd like to show some of the niceties of Rust so let's take a look at some of my code. **Full disclaimer:** I don't claim that any of this code is either correct or idiomatic Rust. It is solely my best effort. Feedback is of course welcome.
 
 ##Some Code
 *You can take a look at the whole project [on GitHub](https://github.com/relistan/cryptorust)*
@@ -63,7 +63,7 @@ impl Digest {
 }
 {% endhighlight %}
 
-There is effectively one class method here and one instance method. The `hexdigest` method requires that the first argument be a reference to an object of type Digest. Much like in Python, this is passed for you when the method is invoked on the object. But it is a signal to the compiler that this is an instance method not a class method. 
+There is effectively one class method here and one instance method. The `hexdigest` method requires that the first argument be a reference to an object of type `Digest`. Much like in Python, this is passed for you when the method is invoked on the object. But it is a signal to the compiler that this is an instance method not a class method. 
 
 *Side note:* If you're wondering why I didn't write something like `acc += fmt(!...)` that is because in 0.7 `+=` is currently removed for `str` objects. This is slated to return in 0.8.
 
@@ -90,7 +90,7 @@ let computed_key = match key.len() {
 };
 {% endhighlight %}
 
-The `match` block does a pattern match on key.len() in this case. The following lines then define matches which might fit. The underscore is a universal match, and if you look at this carefully it appears that all lines will match. However, the `if` statements following the pattern are guards that must be true in order for the pattern to match.
+The `match` block does a pattern match on `key.len()` in this case. The following lines then define matches which might fit. The underscore is a universal match, and if you look at this carefully it appears that all lines will match. However, the `if` statements following the pattern are guards that must be true in order for the pattern to match.
 
 This is a slight abuse of `match`, using it much more like a `switch` statement. It keeps the code clean and compact though. And one of the nice things about pattern matching is that the compiler will analyze the block to the best of its ability and error if there is a case for which you have not supplied a pattern. Had we left the final `_ => key` off the pattern, this would not have compiled. More helpful validation at compile time to save us from errors at run time.
 
