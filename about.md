@@ -2,16 +2,16 @@
 layout: page
 permalink: /about/index.html
 title: About Me
-tagline: Minimal Mistakes, a Jekyll Theme
-tags: [about, Jekyll, theme, responsive]
+tagline: Karl Matthias
+tags: [about, bio]
 image:
   feature: RepeatableSystems-large2.jpg
 ---
-Karl Matthias is a developer and ops engineer with more than 17 years of
+I am a developer and ops engineer with more than 17 years of
 experience in everything from systems administration to network
-security and heavy software development.  He is currently Head of
+security and heavy software development. I am currently Head of
 Operations and Architecture at [MyDrive Solutions](http://mydrivesolutions.com/).
-From Portland, Oregon he currently resides in Guildford, United Kingdom
-with his family.
+From Portland, Oregon I currently reside in Guildford, United Kingdom
+with my family.
 
-He can also be found [on Twitter](https://twitter.com/#!/relistan) and [on Github](https://github.com/relistan/).
+I can also be found [on Twitter](https://twitter.com/#!/relistan) and [on Github](https://github.com/relistan/).
