@@ -22,11 +22,7 @@ class S3Client
 
         s3_filename = file.sub(/^.*?\//, '')
         memo << s3_filename
-        if (obj = @bucket.objects[s3_filename])
-          obj.write(Pathname.new(file))
-        else
-          @bucket.object.create(s3_filename).write(Pathname.new(file))
-        end
+        (@bucket.objects[s3_filename] || @bucket.object.create(s3_filename)).write(Pathname.new(file))
 
         puts 'done'
       end
