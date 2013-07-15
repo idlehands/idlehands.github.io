@@ -43,6 +43,10 @@ class S3Client
   end
 end
 
+def safe_system(cmd)
+  raise "Error executing #{cmd}!" unless system(cmd) 
+end
+
 desc 'Upload the site to S3'
 task :upload do
 
@@ -60,6 +64,7 @@ end
 
 desc 'build the site into the _site dir'
 task :build do
-  system "lessc assets/less/main.less > assets/css/main.css"
-  system "jekyll build"
+  safe_system 'lessc'
+  safe_system 'lessc assets/less/main.less > assets/css/main.css'
+  safe_system 'jekyll build'
 end
