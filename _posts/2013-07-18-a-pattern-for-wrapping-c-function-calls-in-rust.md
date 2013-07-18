@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ! "A Pattern for Wrapping C Calls in Rust"
+title: ! "A Pattern for Wrapping C Function Calls in Rust"
 tags: [rust, development]
 status: publish
 type: post
