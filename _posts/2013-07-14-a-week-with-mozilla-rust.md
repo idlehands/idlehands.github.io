@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ! "A Week with Mozilla's Rust"
-tags: []
+tags: [rust, development]
 status: publish
 type: post
 category: articles
