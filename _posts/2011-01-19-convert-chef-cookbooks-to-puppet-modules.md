@@ -48,6 +48,7 @@ Usage: convert.rb [options]
 {% endhighlight %}
 
 Here is what the converter handles:
+
 * Converts cookbooks to a Puppet module directory structureg
 * Converts recipes to mostly-right Puppet manifests in the proper locationg
 * Copies templates to the correct location in the Puppet moduleg
