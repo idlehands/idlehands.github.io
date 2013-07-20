@@ -3,12 +3,13 @@ require 'aws-sdk'
 class S3Client
   def initialize(access_key, secret_access_key, bucket)
     AWS.config(
-      access_key_id:     AWS_ACCESS_KEY_ID,
-      secret_access_key: AWS_SECRET_ACCESS_KEY
+      access_key_id:     access_key,
+      secret_access_key: secret_access_key,
     )
   
+  p bucket
     @s3 = AWS::S3.new(s3_endpoint: 's3-us-west-2.amazonaws.com')
-    @bucket = @s3.buckets[S3_TARGET_BUCKET]
+    @bucket = @s3.buckets[bucket]
   end
 
   def upload(file_list)
@@ -35,7 +36,6 @@ class S3Client
   end
 
   def s3_filelist
-    @s3.buckets[S3_TARGET_BUCKET].objects.map { |x| x.key }
+    @bucket.objects.map { |x| x.key }
   end
 end
-
