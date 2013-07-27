@@ -79,4 +79,4 @@ Fetching /xen/07_xen from some-bucket.s3.amazonaws.com to /tmp/asdf/xen/files/07
 Modifying template /tmp/chef-cookbooks/cookbooks/xen/templates/default/xen-kernel-config.erb...
 {% endhighlight %}
 
-Find it on GitHub: [http://github.com/relistan/chef2puppet]
+**Code:** (Find it on GitHub)[http://github.com/relistan/chef2puppet]
