@@ -5,7 +5,7 @@ title: About Me
 tagline: Karl Matthias
 tags: [about, bio]
 image:
-  feature: RepeatableSystems-large2.jpg
+  feature: RepeatableSystems-small.jpg
 ---
 I am a developer and ops engineer with more than 17 years of
 experience in everything from systems administration to network
