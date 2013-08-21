@@ -12,33 +12,30 @@ meta:
   _edit_lock: '1333355883'
   _wp_old_slug: ''
 ---
-What if you, for any number of reasons, needed to convert Chef
-cookbooks to Puppet modules and it were convenient to do it in an
-automated way? How hard the task would be to convert the cookbook
-depends largely on how off the ranch the recipes are with respect
-to the Chef DSL.  Since Chef recipes are just Ruby code, you can
-write whatever you want into the recipe.  But if the recipes were
-written in a way that mostly sticks with the Chef DSL you can get
-fairly clean Puppet output in a really simple way: take advantage
-of the fact that Chef's DSL is Ruby, and write a  system for
-evaluating the Chef DSL and generating Puppet syntax output.  I
-found this to be a surprisingly legitimate case for heavy
-meta-programming as much of the Chef DSL translates pretty well
-directly to Puppet.
 
-Hopefully no one is ready to start a flame war at this point.  I
-am not suggesting that anyone use one system or the other.  I
-recently had the need to convert a lot of site-specific Chef code
-to Puppet <a href="http://github.com/relistan/chef2puppet">so I
-wrote a tool </a>to save me a lot of time.  The general approach
-is to convert as much of the Chef code to a module formatted for
-use in Puppet as possible.  You will need to edit the module when
-it is done being converted.  Chef makes an assumption about the
-relationship between resources based on order.  Puppet does no such
-thing.  So you will likely need to managed the dependencies yourself. 
-However, if you specified them explicitly in Chef, they will work
-in Puppet out of the box in most cases. There are currently only
-three options you need to specify to run the tool:
+What if you, for any number of reasons, needed to convert Chef cookbooks to
+Puppet modules and it were convenient to do it in an automated way? How hard
+the task would be to convert the cookbook depends largely on how off the ranch
+the recipes are with respect to the Chef DSL.  Since Chef recipes are just Ruby
+code, you can write whatever you want into the recipe.  But if the recipes were
+written in a way that mostly sticks with the Chef DSL you can get fairly clean
+Puppet output in a really simple way: take advantage of the fact that Chef's
+DSL is Ruby, and write a  system for evaluating the Chef DSL and generating
+Puppet syntax output.  I found this to be a surprisingly legitimate case for
+heavy meta-programming as much of the Chef DSL translates pretty well directly
+to Puppet.
+
+Hopefully no one is ready to start a flame war at this point.  I am not
+suggesting that anyone use one system or the other.  I recently had the need to
+convert a lot of site-specific Chef code to Puppet [so I wrote a
+tool](http://github.com/relistan/chef2puppet) to save me a lot of time.  The
+general approach is to convert as much of the Chef code to a module formatted
+for use in Puppet as possible.  You will need to edit the module when it is
+done being converted.  Chef makes an assumption about the relationship between
+resources based on order.  Puppet does no such thing.  So you will likely need
+to managed the dependencies yourself.  However, if you specified them
+explicitly in Chef, they will work in Puppet out of the box in most cases.
+There are currently only three options you need to specify to run the tool:
 
 {% highlight bash %}
 Usage: convert.rb [options]
