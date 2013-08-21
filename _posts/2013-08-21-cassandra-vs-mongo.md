@@ -11,7 +11,7 @@ published: true
 This is how we got a big win by switching from MongoDB to Cassandra for
 managing our time series data.
 
-![Cassandra vs MongoDB](/images/CassandraVsMongo.png)
+[![Cassandra vs MongoDB](/images/CassandraVsMongo.png)](http://relistan.com/images/CassandraVsMongo.png)
 
 Background
 ----------
