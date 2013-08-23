@@ -38,11 +38,11 @@ class S3Client
     end
   end
 
-  private 
-
   def s3_filelist
     @bucket.objects.map { |x| x.key }
   end
+
+  private 
 
   def get_or_create_object(s3_filename)
     @bucket.objects[s3_filename] || @bucket.object.create(s3_filename)
