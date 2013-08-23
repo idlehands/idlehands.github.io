@@ -105,7 +105,6 @@ let computed_key = match key.len().cmp(&self.block_size) {
   Greater => self.zero_pad(self.hash(key).digest),
 };
 {% endhighlight %}
-(*note*: this is a contrived example as there was no need for this in my project)
 
 One of the nice things about pattern matching is that the compiler will analyze the block to the best of its ability and error if there is a case for which you have not supplied a pattern. Had we left one of the entries in the `enum` off the pattern, this would not have compiled. More helpful validation at compile time to save us from errors at run time.
 
