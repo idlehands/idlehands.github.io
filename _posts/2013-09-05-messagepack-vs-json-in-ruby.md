@@ -13,9 +13,9 @@ performance boost when serializing data to our data store. JSON is the reigning
 champ for data serialization protocols on the web because it is easy to use,
 nearly universally supported, human readable, relatively efficient, and
 compresses very well. I love JSON and we use it extensively at
-[MyDrive](http://mydrivesolutions.com).
+[MyDrive](http://mydrivesolutions.com). But, there is a use case where we get a
+big win from using MessagePack instead.
 
-But, there is a use case where we get a big win from using MessagePack instead.
 We store a lot of [time series data into Cassandra](/cassandra-vs-mongo) and
 that data is about 16 KB per time slice when encoded as JSON. That's a pretty
 hefty chunk of data at the rate at which we write it. The size is less of a
