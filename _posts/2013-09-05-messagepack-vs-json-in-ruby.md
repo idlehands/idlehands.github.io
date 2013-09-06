@@ -8,7 +8,7 @@ category: articles
 published: true
 ---
 
-[MessagePack](http://msgpack.org/) (shortand msgpack) gives us a big
+[MessagePack](http://msgpack.org/) (shorthand: msgpack) gives us a big
 performance boost when serializing data to our data store. JSON is the reigning
 champ for data serialization protocols on the web because it is easy to use,
 nearly universally supported, human readable, relatively efficient, and
