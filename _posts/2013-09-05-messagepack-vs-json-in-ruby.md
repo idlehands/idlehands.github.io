@@ -34,7 +34,7 @@ I thought maybe now it would be faster than MessagePack for the data store
 also, and that perhaps we should look at switching. Some testing proved that
 this was not correct: MessagePack still outperforms JSON deserializing in Ruby,
 even using this excellent and highly optimized library. It's still 2x the speed
-serializing and 1.4x when deserializing. Keep in mind that this is about a 16
+serializing and 1.6x when deserializing. Keep in mind that this is about a 16
 KB document in JSON and 14 KB in MessagePack.
 
 | Encoding      | Size in Bytes
@@ -75,7 +75,8 @@ Rehearsal ------------------------------------
 {% endhighlight %}
 
 That 'real' number in the bottom right is the one we care about most. Doing
-1000 calls took 0.408 seconds with MessagePack and 0.681 seconds with Oj.
+1000 calls took 0.408 seconds with MessagePack and 0.681 seconds with Oj, a
+1.6x improvement.
 
 ## Serializing
 {% highlight ruby %}
@@ -99,7 +100,8 @@ Rehearsal ------------------------------------
 => [  0.150000   0.000000   0.150000 (  0.156360)
 {% endhighlight %}
 
-So 0.074 seconds for MessagePack and 0.156 seconds for Oj.
+So 0.074 seconds for MessagePack and 0.156 seconds for Oj.  That's over a 2x
+improvement in speed.
 
 ## Compression
 There is one place where JSON is the clear winner with our data, though. JSON
