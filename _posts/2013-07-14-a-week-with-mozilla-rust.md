@@ -82,19 +82,31 @@ println(fmt!("%s", digest.hexdigest()));
 We also see a closure in the code above. Coming from Ruby, these feel really nice in Rust as they are by appearances quite similar. I won't get into a long explanation about iterators here (they are in flux), but the `advance` method takes a closure.  We then modify the mutable `acc` variable on each iteration as the closure has this variable in scope.  Nice.
 
 ###Pattern Matching
-Something not yet mentioned is the pattern matching system in Rust. This is similar to that in Erlang and other languages and lends some really flexible syntax to certain statements. A short example of pattern matching (albeit not the best example) from my project was this:
+Something not yet mentioned is the pattern matching system in Rust. This is similar to that in Erlang and other languages and lends some really flexible syntax to certain statements. A short example of pattern matching from my project was this:
 
 {% highlight ruby %}
-let computed_key = match key.len() {
-  _ if key.len() > self.block_size => self.zero_pad(self.hash(key).digest),
-  _ if key.len() < self.block_size => self.zero_pad(key),
-  _ => key
+let computed_key = match key.len().cmp(&self.block_size) {
+  Less => self.zero_pad(key),
+  Equal => key,
+  Greater => self.zero_pad(self.hash(key).digest),
+};
+{% endhighlight %}
+(*note*: this has been updated thanks to feedback)
+
+Here we take the length of the key with `key.len()` and then compare it with our block size using the `cmp()` method. This returns a nicely idiomatic `enum` which can then be put into the pattern match. What's not shown is that underscore is a universal match. In this case because we are matching an `enum` there is a small list of possibilities so we cover them all without need for the universal match.
+
+Rust also supports guard statements like other pattern matching languages. This allows you to further refine the pattern match. For example we could have two lines that execute for `Equal` falling back to guards on a second condition:
+
+{% highlight ruby %}
+let computed_key = match key.len().cmp(&self.block_size) {
+  Less => self.zero_pad(key),
+  Equal if self.block_size == 46 => key,
+  Equal => key,
+  Greater => self.zero_pad(self.hash(key).digest),
 };
 {% endhighlight %}
 
-The `match` block does a pattern match on `key.len()` in this case. The following lines then define matches which might fit. The underscore is a universal match, and if you look at this carefully it appears that all lines will match. However, the `if` statements following the pattern are guards that must be true in order for the pattern to match.
-
-This is a slight abuse of `match`, using it much more like a `switch` statement. It keeps the code clean and compact though. And one of the nice things about pattern matching is that the compiler will analyze the block to the best of its ability and error if there is a case for which you have not supplied a pattern. Had we left the final `_ => key` off the pattern, this would not have compiled. More helpful validation at compile time to save us from errors at run time.
+One of the nice things about pattern matching is that the compiler will analyze the block to the best of its ability and error if there is a case for which you have not supplied a pattern. Had we left one of the entries in the `enum` off the pattern, this would not have compiled. More helpful validation at compile time to save us from errors at run time.
 
 ###More to Come
 
