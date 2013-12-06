@@ -8,6 +8,7 @@ gem 'aws-sdk'
 gem 'mime-types'
 gem 'less'
 gem 'therubyracer'
+gem 'kramdown'
 
 group :development do
   gem 'rspec'
