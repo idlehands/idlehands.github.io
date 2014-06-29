@@ -37,3 +37,16 @@ and cookbooks can deliver a lot of bang for your buck. You add a few lines
 to your configuration management system and you have NGiNX deployed, for
 example. Productivity is immediately increased and everyone is happy.
 
+There are a number of people recommending that when you pull that code in,
+you consider it sacrosanct and rather than modifying it and improving it
+for your needs, you wrap it with another layer of customization that calls
+down into the original upstream module.
+
+But like gems, libraries, and other packaged pieces of code, when you decide to
+customize behavior for your own organization's needs, I propose that you
+should treat your module or cookbook in the same way that you would normally
+treat a library: fork it and change it. If there are generally useful changes
+that can be sent upstream, then you should do that to be a good citizen. It
+may be that all of your changes can be sent upstream. But it's also possible
+that they cannot, in which case I propose that you should just maintain your
+own fork of the code.
