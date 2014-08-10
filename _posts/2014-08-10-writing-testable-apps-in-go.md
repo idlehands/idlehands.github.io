@@ -53,7 +53,7 @@ func populateInfo(fetcher HttpResponseFetcher, parsedInfo *Info) error {
 	if err == nil {
 		err = json.Unmarshal(response, parsedInfo)
 
-		if err = nil {
+		if err == nil {
 			return nil
 		}
 	}
