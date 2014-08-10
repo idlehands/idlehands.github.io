@@ -20,29 +20,31 @@ The key to testable code in Go is using interfaces. When I started to write
 production Go code about 9 months ago, I was given that exact piece of advice
 and well, it was less than enlightening. It was not immediately obvious how
 interfaces solve this problem. My first attempts worked fine, but required
-writing a lot of needless code. It took me awhile to realize how to properly
-leverage Go's powerful interface mechanism. This is what I learned and it has
-drastically improved the testability of my Go code.
+writing a lot of needless code implementing other people's interfaces for test
+stubbing. It took me awhile to realize how to properly leverage Go's powerful
+interface mechanism. This is what I learned and it has drastically improved the
+testability of my Go code.
 
 ##Dependency Injection
 
 You really must be injecting all of your dependencies.
 
-This is good coding practice in most languages, but in dynamic languages you
-can get away with isolating dependencies with runtime magic and stubbing in
-your test code. In Go you need to always inject your dependencies since you
-can't (mostly) patch things at runtime in a safe way.
+Dependency injection is good coding practice in most languages, but in dynamic
+languages you can get away with isolating dependencies with runtime magic and
+with stubbing in your test code. In Go you need to always inject your
+dependencies since you can't (mostly) patch things at runtime in a safe way.
 
 Here's some sample Go code showing the injection of a dependency. Let's say we
-need to be able to get some data from somewhere and then do something with it.
-In the real code I want to get this from the web with an HTTP request, but in
-testing, I want to test my logic not whether I can make an HTTP request.  To
+need to be able to get some JSON data from the web and then do something with
+it.  In the real code I want to get this from the web with an HTTP request, but
+in testing, I want to test my logic not whether I can make an HTTP request.  To
 remove the dependency from my code, I pass in an `HttpResponseFetcher` that
 knows how to get things from the web.
 
 Yes, there are libraries that let you handle HTTP testing without doing this,
 but this is an example that I think is easy to understand. And in many ways
-this is better, more flexible code.
+this is better, more flexible code. Here we'll require in a dependency in the
+method signature.
 
 {% highlight go %}
 func populateInfo(fetcher HttpResponseFetcher, parsedInfo *Info) error {
@@ -60,9 +62,10 @@ func populateInfo(fetcher HttpResponseFetcher, parsedInfo *Info) error {
 }
 {% endhighlight %}
 
-There isn't that much involved in this code, we simply call a method on
-`fetcher` to retrieve a `[]byte` of data, then unmarshal the JSON into a struct
-we were passed.
+There isn't that much involved in this code. We have a dependency on an
+`HttpResponseFetcher` which will be passed in and then we simply call a method
+on it (`fetcher`) to retrieve a `[]byte` of data, then unmarshal the JSON into a
+struct we were passed.
 
 Other than the fact that `fetcher` implements an interface, there are a couple
 of things that are worth noting here. One is that we only call a single method
@@ -104,8 +107,9 @@ func (Fetcher) Fetch(url string) ([]byte, error) {
 }
 {% endhighlight %}
 
-But when we test this we just write a `StubFetcher` that implements the `Fetch`
-method and we're good to go. It's easy to implement:
+That talks to the network, reads the response and packages it up into a
+`[]byte`. But when we test this we just write a `StubFetcher` that implements
+the `Fetch` method and we're good to go. It's easy to implement:
 
 {% highlight go %}
 
@@ -137,7 +141,8 @@ Here we just look at the URL that was requested and return a static
 
 ##Use Your Own Interfaces Most of the Time
 
-One of the most powerful things I've discovered around interfaces is this:
+Here's the thing that took the longest to figure out, and which I think
+will be the biggest help to those on the same learning path:
 you should usually inject your own interfaces, not stdlib or library-defined
 interfaces. That was not apparent at first, but here's why that's powerful.
 
