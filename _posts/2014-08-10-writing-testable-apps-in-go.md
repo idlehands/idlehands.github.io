@@ -139,6 +139,18 @@ func (fetcher stubFetcher) Fetch(url string) ([]byte, error) {
 Here we just look at the URL that was requested and return a static
 `[]byte` that has the contents we want to test with.
 
+So our call inside our test method would pass in the stubbed `Fetcher`
+like this:
+
+
+{% highlight go %}
+var info *Info
+var stub stubFetcher
+
+// We would make some assertions around this:
+populateInfo(stubFetcher, info)
+{% endhighlight %}
+
 ##Use Your Own Interfaces Most of the Time
 
 Here's the thing that took the longest to figure out, and which I think
