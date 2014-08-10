@@ -10,6 +10,6 @@ end
 
 desc 'build the site into the _site dir'
 task :build do
-  safe_system 'lessc assets/less/main.less > assets/css/main.css'
-  safe_system 'jekyll build'
+  safe_system 'bundle exec lessc assets/less/main.less > assets/css/main.css'
+  safe_system 'bundle exec jekyll build'
 end
