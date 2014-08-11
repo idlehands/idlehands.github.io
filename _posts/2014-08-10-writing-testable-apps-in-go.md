@@ -117,7 +117,7 @@ var infoOutput []byte = []byte(
 	`{ "Environment": "production" }`
 )
 
-var StatusOutput []byte = []byte(
+var statusOutput []byte = []byte(
 	`{ "Status": "up" }`
 )
 
