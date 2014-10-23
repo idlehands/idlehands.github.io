@@ -9,7 +9,7 @@ feed_url:         http://feeds.feedburner.com/RepeatableSystems
 owner:
   name:           Karl Matthias
   avatar:         bio-photo.jpg
-  bio:            "DevOps, sysadmin, coder. Senior Site Reliability Engineer at New Relic. Portland, Oregon."
+  bio:            "DevOps, sysadmin, coder. Lead Site Reliability Engineer at New Relic. Portland, Oregon."
   email:          relistan+blog@gmail.com
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   twitter:        "relistan"
