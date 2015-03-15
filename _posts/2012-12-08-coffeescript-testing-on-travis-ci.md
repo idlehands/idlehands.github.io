@@ -113,5 +113,5 @@ Be sure to login to Travis and set up your GitHub account and
 authorize the commit hook from GitHub to trigger it.  This is a few
 simple steps.  Now, when you push to GitHub, your CoffeeScript
 should get compiled, and your tests should get run.  Status will
-be [reported on Travis](href="https://travis-ci.org/relistan/troll.opt,
+be [reported on Travis](https://travis-ci.org/relistan/troll.opt),
 or optionally via an image you link into your `README.md` on GitHub.
