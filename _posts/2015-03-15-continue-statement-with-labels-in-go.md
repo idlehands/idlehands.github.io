@@ -103,3 +103,7 @@ you should probably put that inner loop in a function and call it instead. You
 can then continue the outer loop based on the result. That will be cleaner code
 yet, and well-named functions make the intent of a block of code much more
 explicit. But often the simple label is the right solution.
+
+If you are now wondering whether there are other statements in Go that can use
+this mechanism, consider the [break
+statement](http://www.goinggo.net/2013/11/label-breaks-in-go.html).
