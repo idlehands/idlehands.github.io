@@ -1,6 +1,6 @@
 ---
 layout: home
-description: "A responsive Jekyll theme with editorial tendencies by designer Michael Rose."
+description: "Articles on systems engineering, software development, scalabale data stores. And whatever else strikes me."
 tags: [Jekyll, theme, responsive, blog, template]
 image:
   feature: RepeatableSystems-small.jpg
