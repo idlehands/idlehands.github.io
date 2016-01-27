@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ! "Building Tiny, Reliable Docker Containers"
+title: ! "Building Tiny, Reliable Docker Container Images"
 tags: [docker, go, s6]
 status: publish
 type: post
@@ -8,13 +8,13 @@ category: articles
 published: true
 ---
 
-Building good, clean Docker containers is a bit of an art, and there is a lot
+Building good, clean Docker container images is a bit of an art, and there is a lot
 of conflicting advice out there about how to do them properly. I'd like to
 share some thoughts gained from running Docker containers in production for two
 years at New Relic. Some of this is discussed in the O'Reilly book *[Docker: Up
 and Running](http://shop.oreilly.com/product/0636920036142.do) that I co-wrote
 with Sean Kane. There are all kinds of best practices we could talk about.
-Here I'll focus on some best practices aimed at making things small and reliable.
+Here I'll focus on a few best practices aimed at making things small and reliable.
 
 Size Matters
 ------------
