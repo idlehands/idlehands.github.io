@@ -12,7 +12,7 @@ Building good, clean Docker container images is a bit of an art, and there is a 
 of conflicting advice out there about how to do them properly. I'd like to
 share some thoughts gained from running Docker containers in production for two
 years at New Relic. Some of this is discussed in the O'Reilly book *[Docker: Up
-and Running](http://shop.oreilly.com/product/0636920036142.do) that I co-wrote
+and Running](http://shop.oreilly.com/product/0636920036142.do)* that I co-wrote
 with Sean Kane. There are all kinds of best practices we could talk about.
 Here I'll focus on a few best practices aimed at making things small and reliable.
 
@@ -28,7 +28,7 @@ intermesh nicely with also making your images more reliable, as you'll see.
 
 ###Use Standard Base Images
 
-**Savings**: Depends. Big environments will save a lot, smaller ones won't.
+***Savings***: Depends. Big environments will save a lot, smaller ones won't.
 
 Build all of your production containers on top of a simple set of base images.
 If your base image is big (usually meaning it's based on a full OS distro),
@@ -40,7 +40,7 @@ don't need the space.
 
 I recommend constructing an image hierarchy with a build job that rebuilds,
 re-tags, and re-pushes all the affected base images when any upstream node is
-changed in the tree. This is a really nice pattern that as worked out well in
+changed in the tree. This is a really nice pattern that has worked out well in
 my experience. With this pattern of building all the affected nodes in the tree
 whenever a change is pushed, anyone who will build an application image
 derived from one of those base layers will get the newest version of the base
@@ -80,7 +80,7 @@ So, next time try `FROM gliderlabs/alpine:3.3` and see if it works for you.
 
 ###Statically Link Your Applications
 
-**Savings**: Potentially huge. In many cases no benefit.
+***Savings***: Potentially huge. In many cases no benefit.
 
 If you can get away with it, you can ship the most minimal application of all:
 your application binary and assorted supporting files. Rather than even using
