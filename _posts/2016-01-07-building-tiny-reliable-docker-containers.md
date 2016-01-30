@@ -134,7 +134,7 @@ ability. The binaries are statically linked, very small, and each do one thing
 (take that, `systemd`). Installing it in your container image involves unpacking
 a single tarball and dropping a config file.
 
-One final point in this section. If you're not running a distriuted scheduler,
+One final point in this section. If you're not running a distributed scheduler,
 you owe it to yourself to use a process manager, even if there's only one other
 process in your container. Without something managing your application health,
 you're relying on Docker to restart your dead container for you. My experience
