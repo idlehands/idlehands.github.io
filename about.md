@@ -17,6 +17,6 @@ Reliability Engineer at New Relic. I'm co-author, with Sean Kane, of
 from O'Reilly Media.
 
 I'm currently Principal Systems Engineer at [Nitro](http://gonitro.com),
-and live in Portland, Oregon.
+and live in Dublin, Ireland.
 
 I can also be found [on Twitter](https://twitter.com/#!/relistan) and [on Github](https://github.com/relistan/).
