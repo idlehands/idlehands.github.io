@@ -103,7 +103,7 @@ tells Sidecar what to do with it:
 $ docker run -l 'HealthCheck=HttpGet' \
      -l 'ServiceName=awesome-svc' \
      -l 'ServicePort_80=9500' \
-     -l 'HealthCheckArgs=http://{{ host }}:{{ tcp 9500 }}/' \
+     -l 'HealthCheckArgs=http://{% raw %}{{ host }}:{{ tcp 9500 }}{% endraw %}/' \
      -P -d -t nginx
 {% endhighlight %}
 
