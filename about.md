@@ -2,10 +2,10 @@
 layout: page
 permalink: /about/index.html
 title: About Me
-tagline: Karl Matthias
+tagline: Jeffrey Matthias
 tags: [about, bio]
 image:
-  feature: RepeatableSystems-small.jpg
+  feature: idlehands.codes.logo.jpg
 ---
 
 I am a developer and ops engineer with more than 18 years of experience in
@@ -16,7 +16,6 @@ Reliability Engineer at New Relic. I'm co-author, with Sean Kane, of
 *[Docker: Up and Running](http://shop.oreilly.com/product/0636920036142.do)*
 from O'Reilly Media.
 
-I'm currently Principal Systems Engineer at [Nitro](http://gonitro.com),
-and live in Dublin, Ireland.
+I'm currently looking for my next gig.
 
-I can also be found [on Twitter](https://twitter.com/#!/relistan) and [on Github](https://github.com/relistan/).
+I can also be found [on Twitter](https://twitter.com/#!/idlehands) and [on Github](https://github.com/idlehands/).
