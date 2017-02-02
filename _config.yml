@@ -1,20 +1,20 @@
-title:            Repeatable Systems
-tagline:          Breaking things at industrial scale
+title:            idlehands codes
+tagline:          making code happy
 description:      A responsive Jekyll theme large featured images and solid typography.
 #Comment out url when working locally to resolve base urls correctly
-url:              http://relistan.com
-feed_url:         http://feeds.feedburner.com/RepeatableSystems
+url:              http://idlehands.codes
+feed_url:         http://feeds.feedburner.com/idlehands.codes
 
 # Owner/author information
 owner:
-  name:           Karl Matthias
+  name:           Jeffrey Matthias
   avatar:         bio-photo.jpg
-  bio:            'DevOps, sysadmin, coder. Principal Systems Engineer at <a href="http://gonitro.com">Nitro</a>. Dublin, Ireland.'
-  email:          relistan+blog@gmail.com
+  bio:            'Rubyist, Elixiris. Cares about code quality. Likes walking in the rain.'
+  email:          jmatthias2+blog@gmail.com
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
-  twitter:        "relistan"
+  twitter:        "idlehands"
   facebook:
-  github:         "relistan"
+  github:         "idlehands"
   linkedin:
   instagram:
   lastfm:
