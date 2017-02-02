@@ -9,6 +9,7 @@ gem 'mime-types'
 gem 'less'
 gem 'therubyracer'
 gem 'kramdown'
+gem 'pygments.rb'
 
 group :development do
   gem 'rspec'

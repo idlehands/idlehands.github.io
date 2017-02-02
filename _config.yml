@@ -9,7 +9,7 @@ feed_url:         http://feeds.feedburner.com/idlehands.codes
 owner:
   name:           Jeffrey Matthias
   avatar:         bio-photo.jpg
-  bio:            'Rubyist, Elixiris. Cares about code quality. Likes walking in the rain.'
+  bio:            'Rubyist, Elixirist. Cares about code quality. Likes walking in the rain.'
   email:          jmatthias2+blog@gmail.com
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   twitter:        "idlehands"
@@ -20,7 +20,7 @@ owner:
   lastfm:
   tumblr:
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    https://plus.google.com/109700665359485724940/
+  google_plus:
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   UA-30513561-1
@@ -37,10 +37,10 @@ links:
     url: /articles
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
-future:      true
-pygments:    true
-markdown:    kramdown
+timezone:       America/Denver
+future:         true
+highlighter:    pygments
+markdown:       kramdown
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:title
