@@ -21,7 +21,12 @@ Recently, I worked against outside dependencies where hitting the sandbox regula
 {% highlight ruby %}
 def get_burger_from_bob(customer)
   if @@stub_bobs_burgers
-    {customer_id: customer_id, burger: {temp: "rare", size: 0.25, condiments: ["lettuce", "onion", "pickle"]}}
+    { customer_id: customer_id,
+      burger: { temp: "rare", 
+                size: 0.25,
+                condiments: ["lettuce", "onion", "pickle"]
+              }
+    }
   else
     BobsBurgersGem.fetch_burger(customer.identity.try(:id))
   end
@@ -68,17 +73,17 @@ If you’re getting that far into the pattern, you might consider creating a con
 case Rails.env
   ADAPTER_CONFIG = Configurator.new
 when "test"
-   ADAPTER_CONFIG.burger_client(Adapters::BobsBurgers::ClientMock)
-   ADAPTER_CONFIG.fries_client(Adapters::JimsFries::ClientMock)
+  ADAPTER_CONFIG.burger_client(Adapters::BobsBurgers::ClientMock)
+  ADAPTER_CONFIG.fries_client(Adapters::JimsFries::ClientMock)
 when "development"
-   ADAPTER_CONFIG.burger_client(Adapters::BobsBurgers::ClientMock)
-   ADAPTER_CONFIG.fries_client(Adapters::JimsFries::Client) # Not a typo. Mix and match as needed.
+  ADAPTER_CONFIG.burger_client(Adapters::BobsBurgers::ClientMock)
+  ADAPTER_CONFIG.fries_client(Adapters::JimsFries::Client) # Not a typo. Mix and match as needed.
 when "staging"
-   ADAPTER_CONFIG.burger_client(Adapters::BobsBurgers::Client)
-   ADAPTER_CONFIG.fries_client(Adapters::JimsFries::Client)
+  ADAPTER_CONFIG.burger_client(Adapters::BobsBurgers::Client)
+  ADAPTER_CONFIG.fries_client(Adapters::JimsFries::Client)
 when "production"
-   ADAPTER_CONFIG.burger_client(Adapters::BobsBurgers::Client)
-   ADAPTER_CONFIG.fries_client(Adapters::JimsFries::Client)
+  ADAPTER_CONFIG.burger_client(Adapters::BobsBurgers::Client)
+  ADAPTER_CONFIG.fries_client(Adapters::JimsFries::Client)
 else
   raise Exception.new("Environment: #{Rails.env} is not valid")
 end
@@ -95,7 +100,9 @@ if defined?(Spring)
   Spring.watch(Dir["#{Rails.root}/lib/adapters/**/*.rb"])
 
   Spring.after_fork do
-   Kernel.silence_warnings { load("#{Rails.root}/config/initializers/adapters.rb") }
+    Kernel.silence_warnings do
+      load("#{Rails.root}/config/initializers/adapters.rb")
+    end
   end
 end
 {% endhighlight %}
