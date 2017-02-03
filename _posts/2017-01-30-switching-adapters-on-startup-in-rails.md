@@ -8,10 +8,10 @@ category: articles
 published: true
 ---
 
-This will explain how to choose adapters for 3rd party APIs, based on the environment (or any other condition), on initialization of your Rails application. This was inspired by José Valim’s Elixir post about using environment specific adapters for 3rd party services and the excellent Mix.Config in Elixir. I plan to write more about various ways to test and develop against 3rd party services, but this is a place to start.
+This will explain how to choose adapters for 3rd party APIs, based on the environment (or any other condition), on initialization of your Rails application. This was inspired by [José Valim’s Elixir post](http://blog.plataformatec.com.br/2015/10/mocks-and-explicit-contracts) about using environment specific adapters for 3rd party services and the excellent Mix.Config in Elixir. I plan to write more about various ways to test and develop against 3rd party services, but this is a place to start.
 
 ## Laying some groundwork.
-Before I go any further, I want to define what I mean by 3rd party services. This is really any dependency outside of your code base. Anything you have to call out to for your application to work out. In most cases, this means a service run by someone else, but if you’re working in a multiple service environment (SOA or monolith + micro services), your application is still relying on code that it doesn’t own. Hopefully, you are already on board with using adapters to abstract your 3rd parties. If not, please take time to read Robert Pankowecki’s excellent Adapters 101.
+Before I go any further, I want to define what I mean by 3rd party services. This is really any dependency outside of your code base. Anything you have to call out to for your application to work out. In most cases, this means a service run by someone else, but if you’re working in a multiple service environment (SOA or monolith + micro services), your application is still relying on code that it doesn’t own. Hopefully, you are already on board with using adapters to abstract your 3rd parties. If not, please take time to read [Robert Pankowecki’s excellent Adapters 101](http://blog.arkency.com/2014/08/ruby-rails-adapters).
 As mentioned, I plan to follow up with more posts with specifics on testing/developing adapters.
 When working against 3rd parties in Rails, I commonly reach for VCR to help speed up testing and remove dependencies outside of my own code-base. I’ve been lucky enough to have access to sandboxes for most APIs I’ve worked against.
 
