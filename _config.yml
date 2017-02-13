@@ -9,7 +9,7 @@ feed_url:         http://feeds.feedburner.com/idlehands.codes
 owner:
   name:           Jeffrey Matthias
   avatar:         bio-photo.jpg
-  bio:            'Rubyist, Elixirist. Cares about code quality. Likes walking in the rain.'
+  bio:            'Rubyist, Elixirist. Cares about code quality. Likes walking in the rain. Also, currently looking for his next gig.'
   email:          jmatthias2+blog@gmail.com
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   twitter:        "idlehands"
