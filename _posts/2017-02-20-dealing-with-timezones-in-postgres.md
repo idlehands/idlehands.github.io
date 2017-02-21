@@ -21,9 +21,9 @@ You want to pick a day in your test user’s timezone and figure out what those 
 
 Now let’s set up BAD dats. Subtract a second from the start time of that day and add a second to the end time. At each of those times, insert data with crazy high values. This serves two purposes: if you’re debugging and see high values, you know you’re code/query is still having issues pulling in the right time zone b) if your test rely on a delta, you’ve made sure that grabbing the bad data will pull you outside of that delta.
 
----I will insert a beautiful timeline here in the next day or so---
+![Timeline]({{ site.url }}/images/TimezoneTimeline.png)
 
-In our example, our user’s timezone is 6 hours behind UTC. So we will insert bad data at 2016-12-21 05:59:59 UTC and 2016-12-22 06:00:01 UTC. We will insert whatever good data we want between 2016-12-21 06:00:01 UTC and 2016-12-22 05:59:59 UTC. I’ve moved and *entire *second into that day because there are no consequences for doing so and it’s easier than dealing with parts of a second.
+In our example, our user’s timezone is 6 hours behind UTC. So we will insert bad data at 2016-12-21 05:59:59 UTC and 2016-12-22 06:00:01 UTC. We will insert whatever good data we want between 2016-12-21 06:00:01 UTC and 2016-12-22 05:59:59 UTC. I’ve moved and *entire* second into that day because there are no consequences for doing so and it’s easier than dealing with parts of a second.
 
 The query
 ---------
