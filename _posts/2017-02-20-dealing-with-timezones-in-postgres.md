@@ -8,7 +8,7 @@ category: articles
 published: true
 ---
 
-So, somehow you ended up drawing the short straw and have to fix a timezone related bug in the way your teams code pulls data for a user in their timezone. I’ve been there and I’ve got your back.
+So, somehow you ended up drawing the short straw and have to fix a timezone related bug in the way your team's code pulls data for a user in their timezone. I’ve been there and I’ve got your back.
 
 This post assumes you’re writing all of your data to the db in UTC and having to query for specific times (midnight to midnight in this case) in a different timezone. It doesn’t include code (except PSQL) because this isn’t a language specific pain in the ass.
 
