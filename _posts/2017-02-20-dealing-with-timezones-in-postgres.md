@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ! "Dealing With Timezones in Postgres"
+title: ! "Dealing With User Timezones in Postgres"
 tags: [postgres, testing, f-timezones]
 status: publish
 type: post
