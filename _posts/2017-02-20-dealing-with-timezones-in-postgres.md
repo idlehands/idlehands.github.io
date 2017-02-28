@@ -19,7 +19,7 @@ I’ll get the the weird part of the query, but first let’s set up some test d
 
 You want to pick a day in your test user’s timezone and figure out what those start and end datetimes look like in UTC. Populate some data in the db one second into that day with normal looking values for your application. Then, popluate a row one second before the end of that day with normal looking data. If you want stuff in between, go for it. You’ll know better than I whether or not that makes sense for you.
 
-Now let’s set up BAD dats. Subtract a second from the start time of that day and add a second to the end time. At each of those times, insert data with crazy high values. This serves two purposes: if you’re debugging and see high values, you know you’re code/query is still having issues pulling in the right time zone b) if your test rely on a delta, you’ve made sure that grabbing the bad data will pull you outside of that delta.
+Now let’s set up BAD data. Subtract a second from the start time of that day and add a second to the end time. At each of those times, insert data with crazy high values. This serves two purposes: if you’re debugging and see high values, you know you’re code/query is still having issues pulling in the right time zone b) if your test rely on a delta, you’ve made sure that grabbing the bad data will pull you outside of that delta.
 
 ![Timeline]({{ site.url }}/images/TimezoneTimeline.png)
 
@@ -43,6 +43,23 @@ AND u.id = 1;
 {% endhighlight %}
 
 Sorry about the formatting, but I wanted it to fit in single lines in the format of this blog.`('2016-12-21 00:00:00.000' AT TIME ZONE 'UTC' AT TIME ZONE u.timezone)` is the funky sql that will get you want you need. It give you midnight in your user’s timezone. Run your tests if you don’t believe me. It’s the real deal. I typically add a comment above the query that says `# This odd sql converts UTC to user's timezone. DON'T CHANGE`. I do that because it’s hard to read and understand and people really seem to want to remove it.
+
+Update
+------
+Commenter Theron has pointed out that he is getting the same results with a more readable query with:
+{% highlight sql %}
+SELECT SUM(att.head_count)
+FROM attendence att
+JOIN users u
+ON att.user_id = u.id
+WHERE att.inserted_at
+BETWEEN ('2016-12-21 00:00:00.000'::timestamp AT TIME ZONE u.timezone)
+  AND
+        ('2016-12-21 23:59:59.999'::timestamp 'UTC' AT TIME ZONE u.timezone)
+AND u.id = 1;
+{% endhighlight %}
+
+While I know that I switched away from that because I was having issues with our queries, 1.5 years after I solved the issue, I can not replicate the issues. Therefore, it is likely that his clearer query will serve your purposes and it's always good to do things as clearly as possible.
 
 In Summary
 ----------
