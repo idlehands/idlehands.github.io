@@ -55,7 +55,7 @@ ON att.user_id = u.id
 WHERE att.inserted_at
 BETWEEN ('2016-12-21 00:00:00.000'::timestamp AT TIME ZONE u.timezone)
   AND
-        ('2016-12-21 23:59:59.999'::timestamp 'UTC' AT TIME ZONE u.timezone)
+        ('2016-12-21 23:59:59.999'::timestamp AT TIME ZONE u.timezone)
 AND u.id = 1;
 {% endhighlight %}
 
