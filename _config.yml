@@ -61,3 +61,5 @@ kramdown:
 
 include: [".htaccess"]
 exclude: ["bin", "lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "minimal-mistakes.sublime-project", "minimal-mistakes.sublime-workspace", "LICENSE", "Gemfile"]
+
+theme: jekyll-theme-minimal
