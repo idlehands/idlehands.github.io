@@ -1,8 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.5.0)
-      public_suffix (~> 2.0, >= 2.0.2)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     aws-sdk (2.7.3)
       aws-sdk-resources (= 2.7.3)
     aws-sdk-core (2.7.3)
@@ -49,7 +49,7 @@ GEM
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
     posix-spawn (0.3.11)
-    public_suffix (2.0.5)
+    public_suffix (5.0.0)
     pygments.rb (0.5.4)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
